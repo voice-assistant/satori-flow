@@ -1,0 +1,34 @@
+{
+  "name": "satori",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "main": "dist/bundle.js",
+  "scripts": {
+    "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
+    "postinstall": "webpack",
+    "babel": "babel src -d lib",
+    "lint": "eslint src/**/*.js test/**/*.js"
+  },
+  "author": "takahi-i",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "espower-babel": "^4.0.3",
+    "mocha": "^4.0.1",
+    "power-assert": "^1.4.4"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelfy": "^1.1.0",
+    "webpack": "^3.8.1",
+    "webpack-cli": "^1.0.0"
+  }
+}
