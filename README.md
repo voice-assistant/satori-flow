@@ -18,7 +18,7 @@ npm install git+ssh://git@github.com/voice-assistant/satori --save
 
 # Usage
 
-Please read [doc/main.adoc](https://github.com/voice-assistant/atori/blob/master/doc/main.adoc)
+Please read [doc/main.adoc](https://github.com/voice-assistant/satori/blob/master/doc/main.adoc)
 
 # License
 
