@@ -80,11 +80,11 @@ describe( 'TemplateMatcher.match', () => {
         });
     });
 
-    describe( '#match with ignore_space option', () => {
+    describe( '#match with ignoreSpace option', () => {
         const config = new ConfigurationBuilder()
             .addIntent("Search with ingredients", {
                 "type" : "template",
-                "options": "ignore_space",
+                "options": "ignoreSpace",
                 "patterns" : [ "#{ingredients} で できるレシピおしえて" ]})
             .addSlot("ingredients", ["じゃがいも", "ナス"])
             .build();
@@ -95,15 +95,15 @@ describe( 'TemplateMatcher.match', () => {
         assert( result === true );
     });
 
-    describe( '#match with exact_match option', () => {
+    describe( '#match with exactMatch option', () => {
         const config = new ConfigurationBuilder()
             .addIntent("Search with ingredients", {
                 "type" : "template",
-                "options": "ignore_space exact_match",
+                "options": "ignoreSpace exactMatch",
                 "patterns" : [ "#{ingredients}" ]})
             .addIntent("Search with !", {
                 "type" : "template",
-                "options": "ignore_space exact_match",
+                "options": "ignoreSpace exactMatch",
                 "patterns" : [ "#{ingredients}!" ]})
             .addSlot("ingredients", ["potato", "eggplant"])
             .build();
