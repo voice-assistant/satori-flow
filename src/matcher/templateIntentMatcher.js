@@ -21,7 +21,7 @@ export default class TemplateIntentMatcher extends IntentMatcher {
         this.slot = slot;
         this.options = Object.assign({}, defaultOptions);
         if (config.options) {
-          const userOptions = config.options.split(' ');
+          const userOptions = Array.isArray(config.options) ? config.options : [config.options];
           Object.keys(this.options).forEach((k) => {
             if(userOptions.includes(k)) { this.options[k] = true }
           })

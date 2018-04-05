@@ -102,11 +102,11 @@ describe( 'TemplateMatcher.match', () => {
             const config = new ConfigurationBuilder()
                 .addIntent("Search with ingredients", {
                     "type" : "template",
-                    "options": "ignoreSpace exactMatch",
+                    "options": ["ignoreSpace", "exactMatch"],
                     "patterns" : [ "#{ingredients}" ]})
                 .addIntent("Search with !", {
                     "type" : "template",
-                    "options": "ignoreSpace exactMatch",
+                    "options": "exactMatch",
                     "patterns" : [ "#{ingredients}!" ]})
                 .addSlot("ingredients", ["potato", "eggplant"])
                 .build();
