@@ -1,6 +1,5 @@
 import VerbatimIntentMatcher from "./matcher/verbatimIntenstionMatcher";
 import TemplateIntentMatcher from "./matcher/templateIntentMatcher";
-import VerbatimTemplateIntentMatcher from "./matcher/verbatimTemplateIntentMatcher";
 
 /**
  * Check if a input matches and extract features needed to generate reply.
@@ -22,8 +21,6 @@ export default class IntentHandler {
                 return new VerbatimIntentMatcher(matchConfig);
             case 'template':
                 return new TemplateIntentMatcher(matchConfig, slots);
-            case 'verbatimTemplate':
-                return new VerbatimTemplateIntentMatcher(matchConfig, slots);
             default:
                 throw new Error(`Nothing matcher type such as ${matchConfig["type"]}`);
         }

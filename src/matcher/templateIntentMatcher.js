@@ -7,6 +7,11 @@ export class Template {
     }
 }
 
+const defaultOptions = {
+  exact_match: false,
+  ignore_space: false
+};
+
 /**
  * A template based matcher. This object is used as if Alexa style input matching.
  */
@@ -14,6 +19,13 @@ export default class TemplateIntentMatcher extends IntentMatcher {
     constructor(config, slot) {
         super(config);
         this.slot = slot;
+        this.options = Object.assign({}, defaultOptions);
+        if (config.options) {
+          const userOptions = config.options.split(' ');
+          Object.keys(this.options).forEach((k) => {
+            if(userOptions.includes(k)) { this.options[k] = true }
+          })
+        }
         this.templates = this._generateTemplates(config["patterns"]);
     }
 
@@ -27,7 +39,16 @@ export default class TemplateIntentMatcher extends IntentMatcher {
 
     _generateTemplate(pattern) {
         const results = this._extractElements(pattern);
-        return this._newTemplate(results.elements, results.slotNames);
+        let elements = results.elements;
+        if (this.options.exact_match) {
+          elements = ['^']
+          results.elements.forEach((e) => elements.push(e))
+          elements.push('$')
+        }
+        if (this.options.ignore_space) {
+          elements.forEach((e, i) => elements[i] = e.replace(/\s/g, ''))
+        }
+        return this._newTemplate(elements, results.slotNames);
     }
 
     _newTemplate(elements, slotNames) {
@@ -68,7 +89,11 @@ export default class TemplateIntentMatcher extends IntentMatcher {
     textMatch(input) {
         input["feature"] = {};
         for (const template of this.templates) {
-            const results = input["text"].match(template.regexp);
+            let text = input["text"];
+            if (this.options.ignore_space) {
+              text = text.replace(/\s/g, '')
+            }
+            const results = text.match(template.regexp);
             if (results === null) {
                 continue;
             }
