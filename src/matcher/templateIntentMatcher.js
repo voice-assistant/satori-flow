@@ -74,8 +74,11 @@ export default class TemplateIntentMatcher extends IntentMatcher {
                 endPosition = pattern.indexOf("}", startPosition);
                 const slotName = pattern.substring(startPosition + 1, endPosition);
                 const concreteSlotName = slotAliasMap[slotName] || slotName;
+                if (!this.slot[concreteSlotName]) {
+                  throw new Error(`Not Found SlotName: '${concreteSlotName}'`)
+                }
                 elements.push(`(${this.slot[concreteSlotName].join("|")})`);
-                slotNames.push(concreteSlotName);
+                slotNames.push(slotName);
                 inBrace = false;
             }
 
