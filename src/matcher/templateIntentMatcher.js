@@ -26,19 +26,19 @@ export default class TemplateIntentMatcher extends IntentMatcher {
             if(userOptions.includes(k)) { this.options[k] = true }
           })
         }
-        this.templates = this._generateTemplates(config["patterns"]);
+        this.templates = this._generateTemplates(config["patterns"], (config["slotAlias"] || {}));
     }
 
-    _generateTemplates(patterns) {
+    _generateTemplates(patterns, slotAliasMap) {
         const templates = [];
         for (const pattern of patterns) {
-            templates.push(this._generateTemplate(pattern));
+            templates.push(this._generateTemplate(pattern, slotAliasMap));
         }
         return templates;
     }
 
-    _generateTemplate(pattern) {
-        const results = this._extractElements(pattern);
+    _generateTemplate(pattern, slotAliasMap) {
+        const results = this._extractElements(pattern, slotAliasMap);
         let elements = results.elements;
         if (this.options.exactMatch) {
           elements = ['^']
@@ -55,7 +55,7 @@ export default class TemplateIntentMatcher extends IntentMatcher {
       return new Template(elements, slotNames);
     }
 
-    _extractElements(pattern) {
+    _extractElements(pattern, slotAliasMap) {
         let startPosition = 0;
         let endPosition = 0;
         const elements = [];
@@ -73,7 +73,11 @@ export default class TemplateIntentMatcher extends IntentMatcher {
             } else { // found slot
                 endPosition = pattern.indexOf("}", startPosition);
                 const slotName = pattern.substring(startPosition + 1, endPosition);
-                elements.push(`(${this.slot[slotName].join("|")})`);
+                const concreteSlotName = slotAliasMap[slotName] || slotName;
+                if (!this.slot[concreteSlotName]) {
+                  throw new Error(`Not Found SlotName: '${concreteSlotName}'`)
+                }
+                elements.push(`(${this.slot[concreteSlotName].join("|")})`);
                 slotNames.push(slotName);
                 inBrace = false;
             }
