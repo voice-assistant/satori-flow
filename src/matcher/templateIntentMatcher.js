@@ -8,8 +8,8 @@ export class Template {
 }
 
 const defaultOptions = {
-  exact_match: false,
-  ignore_space: false
+  exactMatch: false,
+  ignoreSpace: false
 };
 
 /**
@@ -40,12 +40,12 @@ export default class TemplateIntentMatcher extends IntentMatcher {
     _generateTemplate(pattern) {
         const results = this._extractElements(pattern);
         let elements = results.elements;
-        if (this.options.exact_match) {
+        if (this.options.exactMatch) {
           elements = ['^']
           results.elements.forEach((e) => elements.push(e))
           elements.push('$')
         }
-        if (this.options.ignore_space) {
+        if (this.options.ignoreSpace) {
           elements.forEach((e, i) => elements[i] = e.replace(/\s/g, ''))
         }
         return this._newTemplate(elements, results.slotNames);
@@ -90,7 +90,7 @@ export default class TemplateIntentMatcher extends IntentMatcher {
         input["feature"] = {};
         for (const template of this.templates) {
             let text = input["text"];
-            if (this.options.ignore_space) {
+            if (this.options.ignoreSpace) {
               text = text.replace(/\s/g, '')
             }
             const results = text.match(template.regexp);
