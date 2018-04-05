@@ -118,4 +118,22 @@ describe( 'TemplateMatcher.match', () => {
             assert( result["match"] === "Search with ingredients" );
         });
     });
+
+    describe( '#match with SlotAlias', () => {
+        it( 'returns true when input includes slot alias match the registered patterns', () => {
+            const config = new ConfigurationBuilder()
+                .addIntent("Search with ingredients", {
+                    "type" : "template",
+                    "patterns" : [ "#{shokuzai}でできるレシピおしえて" ],
+                    "slotAlias": { shokuzai: 'ingredients' },
+                })
+                .addSlot("ingredients", ["じゃがいも", "ナス"])
+                .build();
+            const input = {"text" : "ナスでできるレシピおしえて"};
+            const handler = new IntentHandler(config.intent(0), config.slots());
+            const result = handler.match(input);
+            assert( input['feature']['shokuzai'] === 'ナス' );
+            assert( result === true );
+        });
+    });
 });
