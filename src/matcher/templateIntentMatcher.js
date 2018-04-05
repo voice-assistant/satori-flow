@@ -16,10 +16,16 @@ const defaultOptions = {
  * A template based matcher. This object is used as if Alexa style input matching.
  */
 export default class TemplateIntentMatcher extends IntentMatcher {
-    constructor(config, slot, options = {}) {
+    constructor(config, slot) {
         super(config);
         this.slot = slot;
-        this.options = Object.assign(Object.assign({}, defaultOptions), options);
+        this.options = Object.assign({}, defaultOptions);
+        if (config.options) {
+          const userOptions = config.options.split(' ');
+          Object.keys(this.options).forEach((k) => {
+            if(userOptions.includes(k)) { this.options[k] = true }
+          })
+        }
         this.templates = this._generateTemplates(config["patterns"]);
     }
 

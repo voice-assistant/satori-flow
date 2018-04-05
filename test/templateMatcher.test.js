@@ -79,5 +79,40 @@ describe( 'TemplateMatcher.match', () => {
             assert( result["match"] === "Search with ingredients" );
         });
     });
+
+    describe( '#match with ignore_space option', () => {
+        const config = new ConfigurationBuilder()
+            .addIntent("Search with ingredients", {
+                "type" : "template",
+                "options": "ignore_space",
+                "patterns" : [ "#{ingredients} で できるレシピおしえて" ]})
+            .addSlot("ingredients", ["じゃがいも", "ナス"])
+            .build();
+        const input = {"text" : "ナスでできる レシピ おしえて"};
+        const handler = new IntentHandler(config.intent(0), config.slots());
+        const result = handler.match(input);
+        assert( input['feature']['ingredients'] === 'ナス' );
+        assert( result === true );
+    });
+
+    describe( '#match with exact_match option', () => {
+        const config = new ConfigurationBuilder()
+            .addIntent("Search with ingredients", {
+                "type" : "template",
+                "options": "ignore_space exact_match",
+                "patterns" : [ "#{ingredients}" ]})
+            .addIntent("Search with !", {
+                "type" : "template",
+                "options": "ignore_space exact_match",
+                "patterns" : [ "#{ingredients}!" ]})
+            .addSlot("ingredients", ["potato", "eggplant"])
+            .build();
+        const detector = new IntentDetector(config);
+        let result = detector.match({"text" : "potato!"});
+        assert( result["match"] === "Search with !" );
+
+        result = detector.match({"text" : "potato"});
+        assert( result["match"] === "Search with ingredients" );
+    });
 });
 ``
