@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/voice-assistant/satori.svg?branch=master)](https://travis-ci.org/voice-assistant/satori)
+
 # Satori
 
 An intent detector.
@@ -18,7 +20,7 @@ npm install git+ssh://git@github.com/voice-assistant/satori --save
 
 # Usage
 
-Please read [doc/main.adoc](https://github.com/voice-assistant/satori/blob/master/doc/main.adoc)
+For detailed usage. Please read [doc/main.adoc](https://github.com/voice-assistant/satori/blob/master/doc/main.adoc).
 
 # License
 
