@@ -26,8 +26,6 @@ The following is a sample code to detect intent from user by Satori.
 import { ConfigurationBuilder } from 'satori'
 import { IntentDetector } from 'satori'
 
-
-
 const config = new ConfigurationBuilder()
       .addIntent("repeat", { "type" : "verbatim", "patterns" : [ "repeat", "please repeat" ]})
       .addRunner("repeat", {"type" : "random", "list" : ["sure"]} )
@@ -43,3 +41,7 @@ For detailed usage. Please read [doc/main.adoc](https://github.com/voice-assista
 # License
 
 Apache 2.0
+
+# Contribution
+
+See [CONTRIBUTING.md](https://github.com/voice-assistant/satori/blob/master/CONTRIBUTING.md).
