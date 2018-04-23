@@ -15,7 +15,7 @@ and the arguments, which are needed to process the selected tasks.
 Run the following command in your repository. 
 
 ```
-npm install git+ssh://git@github.com/voice-assistant/satori --save
+npm install git+ssh://git@github.com/voice-assistant/satori-flow --save
 ```
 
 # Sample
@@ -23,8 +23,8 @@ npm install git+ssh://git@github.com/voice-assistant/satori --save
 The following is a sample code to detect intent from user by Satori.
 
 ```javascript
-import { ConfigurationBuilder } from 'satori'
-import { IntentDetector } from 'satori'
+import { ConfigurationBuilder } from 'satori-flow'
+import { IntentDetector } from 'satori-flow'
 
 const config = new ConfigurationBuilder()
       .addIntent("repeat", { "type" : "verbatim", "patterns" : [ "repeat", "please repeat" ]})
