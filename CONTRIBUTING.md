@@ -16,5 +16,5 @@ If you would like to contribute, fork this repository, and send a [pull request]
 Make sure to add the description and intent of the changes. Before submit a pull request,
 run `make test` from root directory to check the updated template.
 
-[1]: https://github.com/voice-assistant/satori/issues/new
-[2]: https://github.com/voice-assistant/satori/compare
+[1]: https://github.com/voice-assistant/satori-flow/issues/new
+[2]: https://github.com/voice-assistant/satori-flow/compare
