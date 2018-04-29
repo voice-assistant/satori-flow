@@ -1,5 +1,5 @@
 import assert  from 'power-assert';
-import ConfigurationBuilder from "../src/configuration_builder";
+import ConfigurationBuilder from "../src/configurationBuilder";
 import IntentHandler from "../src/intentHandler"
 import IntentDetector from "../src/intentDetector";
 

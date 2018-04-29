@@ -1,6 +1,6 @@
 import assert  from 'power-assert';
 
-import ConfigurationBuilder from "../src/configuration_builder";
+import ConfigurationBuilder from "../src/configurationBuilder";
 import IntentDetector from "../src/intentDetector";
 
 class IntentDetectorForTest extends IntentDetector {

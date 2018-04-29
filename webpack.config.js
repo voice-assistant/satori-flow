@@ -4,7 +4,7 @@ module.exports = {
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.js',
-        library: 'satori',
+        library: 'satori-flow',
         libraryTarget: "umd"
     },
     module: {

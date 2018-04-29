@@ -1,6 +1,6 @@
 import assert  from 'power-assert';
 import Configuration from "../src/configuration";
-import ConfigurationBuilder from "../src/configuration_builder";
+import ConfigurationBuilder from "../src/configurationBuilder";
 
 describe( 'Configuration', () => {
     describe( '#constructor', () => {
