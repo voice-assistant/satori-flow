@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/voice-assistant/satori.svg?branch=master)](https://travis-ci.org/voice-assistant/satori)
+[![Build Status](https://travis-ci.org/voice-assistant/satori-flow.svg?branch=master)](https://travis-ci.org/voice-assistant/satori-flow)
 
 # Satori
 
