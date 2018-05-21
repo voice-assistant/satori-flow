@@ -2,6 +2,7 @@
   "name": "satori-flow",
   "version": "0.1.0",
   "description": "",
+  "homepage": "https://github.com/voice-assistant/satori-flow",
   "private": false,
   "main": "dist/bundle.js",
   "scripts": {
