@@ -1,8 +1,8 @@
 {
   "name": "satori-flow",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
-  "private": true,
+  "private": false,
   "main": "dist/bundle.js",
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
