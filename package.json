@@ -2,8 +2,13 @@
   "name": "satori-flow",
   "version": "0.1.0",
   "description": "",
+  "homepage": "https://github.com/voice-assistant/satori-flow",
   "private": false,
   "main": "dist/bundle.js",
+  "keywords": [
+    "dialogue",
+    "discourse"
+  ],
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
     "postinstall": "webpack",
@@ -11,7 +16,7 @@
     "lint": "eslint src/**/*.js test/**/*.js"
   },
   "author": "takahi-i",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "eslint": "^4.12.1",
     "espower-babel": "^4.0.3",
@@ -30,5 +35,9 @@
     "babelfy": "^1.1.0",
     "webpack": "^3.8.1",
     "webpack-cli": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:voice-assistant/satori-flow.git"
   }
 }
