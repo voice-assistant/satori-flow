@@ -16,7 +16,7 @@
     "lint": "eslint src/**/*.js test/**/*.js"
   },
   "author": "takahi-i",
-  "license": "ISC",
+  "license": "Apache 2.0",
   "devDependencies": {
     "eslint": "^4.12.1",
     "espower-babel": "^4.0.3",
