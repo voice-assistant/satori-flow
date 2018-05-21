@@ -5,6 +5,10 @@
   "homepage": "https://github.com/voice-assistant/satori-flow",
   "private": false,
   "main": "dist/bundle.js",
+  "keywords": [
+    "dialogue",
+    "discourse"
+  ],
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
     "postinstall": "webpack",
