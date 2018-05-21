@@ -30,5 +30,9 @@
     "babelfy": "^1.1.0",
     "webpack": "^3.8.1",
     "webpack-cli": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:voice-assistant/satori-flow.git"
   }
 }
