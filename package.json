@@ -9,10 +9,13 @@
     "dialogue",
     "discourse"
   ],
+  "bin": {
+    "satori": "dist/satori-cli.js"
+  },
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
+    "preinstall": "npx babel bin/satori-cli.js --out-file dist/satori-cli.js",
     "postinstall": "webpack",
-    "babel": "babel src -d lib",
     "lint": "eslint src/**/*.js test/**/*.js"
   },
   "author": "takahi-i",
