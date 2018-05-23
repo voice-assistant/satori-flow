@@ -15,12 +15,14 @@ and the arguments, which are needed to process the selected tasks.
 Run the following command in your repository. 
 
 ```
-npm install git+ssh://git@github.com/voice-assistant/satori-flow --save
+npm install satori-flow
 ```
 
 # Sample
 
-The following is a sample code to detect intent from user by Satori.
+
+After you install the Satori, you can run a [sample](https://github.com/voice-assistant/satori-flow/blob/master/sample/satori-sample.js)
+bundled in this repository. The following is a sample code to detect intent from user by Satori.
 
 ```javascript
 import { ConfigurationBuilder } from 'satori-flow'
@@ -34,6 +36,17 @@ const config = new ConfigurationBuilder()
 const detector = new IntentDetector(config);
 const result = detector.match({"text" : "I would like to repeat again.", "userId" : 985499 });
 console.log(result)
+```
+
+You can run the above script (saved as `sample/satori-sample.js`) with the following command.
+
+```bash
+$ babel-node sample/satori-sample.js
+{ text: 'I would like to repeat again.',
+  userId: 985499,
+  state: {},
+  match: 'repeat' }
+  satori git:(master)
 ```
 
 For detailed usage. Please read [doc/main.adoc](https://github.com/voice-assistant/satori/blob/master/doc/main.adoc).
