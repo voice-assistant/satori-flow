@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
-    "preinstall": "npx babel bin/satori-cli.js --out-file dist/satori-cli.js",
+    "preinstall": "$(npm bin)/babel bin/satori-cli.js --out-file dist/satori-cli.js",
     "postinstall": "webpack",
     "lint": "eslint src/**/*.js test/**/*.js"
   },
