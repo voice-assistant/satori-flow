@@ -1,5 +1,5 @@
-import IntentDetector from "./intentDetector";
-import RandomRunner from "./runner/randomRunner";
+import IntentDetector from "./intent_detector";
+import RandomRunner from "./runner/random_runner";
 
 /**
  * Sample dialog manager.

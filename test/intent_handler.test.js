@@ -1,6 +1,6 @@
 import assert  from 'power-assert';
-import ConfigurationBuilder from "../src/configurationBuilder";
-import IntensionHandler from "../src/intentHandler";
+import ConfigurationBuilder from "../src/configuration_builder";
+import IntensionHandler from "../src/intent_handler";
 
 describe( 'IntentHandler', () => {
     describe( '#match', () => {

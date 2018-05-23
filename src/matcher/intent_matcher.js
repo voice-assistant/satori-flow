@@ -1,4 +1,4 @@
-import StateConditions from "./stateConditions";
+import StateConditions from "./state_conditions";
 
 /**
  * This class match intents with registered conditions and input match.

@@ -1,5 +1,5 @@
 import assert  from 'power-assert';
-import StateConditions from "../src/matcher/stateConditions";
+import StateConditions from "../src/matcher/state_conditions";
 
 describe( 'StateConditions', () => {
     describe( '#isMeet', () => {

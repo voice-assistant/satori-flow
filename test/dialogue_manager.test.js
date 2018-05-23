@@ -1,6 +1,6 @@
 import assert  from 'power-assert';
-import DialogueManager from "../src/dialogueManager";
-import ConfigurationBuilder from "../src/configurationBuilder";
+import DialogueManager from "../src/dialogue_manager";
+import ConfigurationBuilder from "../src/configuration_builder";
 
 describe( 'DialogueManager', () => {
     describe ('#reply', () => {

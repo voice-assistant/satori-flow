@@ -1,4 +1,4 @@
-import StateCondition from "./stateCondition";
+import StateCondition from "./state_condition";
 
 /**
  * Set of StateCondition.

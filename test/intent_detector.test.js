@@ -1,7 +1,7 @@
 import assert  from 'power-assert';
 
-import ConfigurationBuilder from "../src/configurationBuilder";
-import IntentDetector from "../src/intentDetector";
+import ConfigurationBuilder from "../src/configuration_builder";
+import IntentDetector from "../src/intent_detector";
 
 class IntentDetectorForTest extends IntentDetector {
    setUserState(userId, state) {
