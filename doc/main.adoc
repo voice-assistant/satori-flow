@@ -45,13 +45,15 @@ As we see from the above image, `IntentDetector` processes several steps before 
 - Step 3. `IntentDetector` contains multiple `IntentHandler` object and select IntentHandler which matches input sentence. IntentHander add information used to generate the reply sentence in `feature` block
 - Step 4. Return JSON object
 
+== Install
+
+To install Satori, we run the following command.
+
+```
+npm install satori-flow
+```
+
 == Usage
-
-Currently Satori are tiny library without cli sample. To install Satori, we run the following command.
-
-```
-npm install git+ssh://git@ghe.ckpd.co/research/intent-detector-alpha --save
-```
 
 Now we can use classes provided by the Satori package.
 Among the classes provided by Satori, the most important class is IntentDetector.
