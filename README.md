@@ -49,6 +49,8 @@ $ babel-node sample/satori-sample.js
   satori git:(master)
 ```
 
+# Usage
+
 For detailed usage. Please read [doc/main.adoc](https://github.com/voice-assistant/satori/blob/master/doc/main.adoc).
 
 # License
