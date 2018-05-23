@@ -1,4 +1,4 @@
-import IntentMatcher from "./intentMatcher"
+import IntentMatcher from "./intent_matcher"
 
 /**
  * This matcher check if input sentence contains predefined patterns.

@@ -1,7 +1,7 @@
 import assert  from 'power-assert';
-import ConfigurationBuilder from "../src/configurationBuilder";
-import IntentHandler from "../src/intentHandler"
-import IntentDetector from "../src/intentDetector";
+import ConfigurationBuilder from "../src/configuration_builder";
+import IntentHandler from "../src/intent_handler"
+import IntentDetector from "../src/intent_detector";
 
 describe( 'TemplateMatcher.match', () => {
     describe( '#match', () => {

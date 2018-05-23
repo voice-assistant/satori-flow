@@ -1,4 +1,4 @@
-import IntentMatcher from "./intentMatcher"
+import IntentMatcher from "./intent_matcher"
 
 export class Template {
     constructor(elements, slotNames) {

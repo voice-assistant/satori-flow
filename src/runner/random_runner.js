@@ -1,4 +1,4 @@
-import ActionRunner from "./actionRunner";
+import ActionRunner from "./action_runner";
 
 /**
  * Returns one of predefined reply sentences.

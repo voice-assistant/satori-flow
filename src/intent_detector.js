@@ -1,5 +1,5 @@
-import IntentHandler from "./intentHandler";
-import MemoryTable from "./table/memoryTable";
+import IntentHandler from "./intent_handler";
+import MemoryTable from "./table/memory_table";
 
 /**
  * Select a Handler which match input sentence and meets the condition.

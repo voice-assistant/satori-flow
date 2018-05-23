@@ -1,4 +1,4 @@
-import UserTable from "./userTable";
+import UserTable from "./user_table";
 
 export default class MemoryTable extends UserTable {
     /**
