@@ -46,7 +46,6 @@ $ babel-node sample/satori-sample.js
   userId: 985499,
   state: {},
   match: 'repeat' }
-  satori git:(master)
 ```
 
 # Usage
