@@ -12,9 +12,12 @@ program
     .parse(process.argv);
 
 console.log('config path %s', program.config);
-fs.readFile(program.config, 'utf-8', function (err, data) {
+fs.readFile(program.config, 'utf-8', (err, data) => {
     const configuration = new Configuration(data);
     const detector = new IntentDetector(configuration);
-    const result = detector.match({"text" : "I would like to repeat again.", "userId" : 985499 });
-    console.log(result);
+    const stdin = process.openStdin();
+    stdin.addListener("data", function(d) {
+        const result = detector.match({"text" : d.toString().trim(), "userId" : 985499 });
+        console.log(result);
+    });
 });
