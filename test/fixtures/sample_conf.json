@@ -1,0 +1,11 @@
+{
+  "intents": [
+    {
+      "name": "Repeat",
+      "match" : {
+        "type" : "verbatim",
+        "patterns" : [ "もう一度", "もう一度教えて" ]
+      }
+    }
+  ]
+}

@@ -35,6 +35,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "babelfy": "^1.1.0",
+    "commander": "^2.15.1",
     "webpack": "^3.8.1",
     "webpack-cli": "^1.0.0"
   },
