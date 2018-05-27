@@ -9,10 +9,12 @@
     "dialogue",
     "discourse"
   ],
+  "bin": {
+    "satori": "dist/satori-cli.js"
+  },
   "scripts": {
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
-    "postinstall": "webpack",
-    "babel": "babel src -d lib",
+    "postinstall": "webpack; $(npm bin)/babel bin/satori-cli.js --out-file dist/satori-cli.js",
     "lint": "eslint src/**/*.js test/**/*.js"
   },
   "author": "takahi-i",
@@ -33,6 +35,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
     "babelfy": "^1.1.0",
+    "commander": "^2.15.1",
     "webpack": "^3.8.1",
     "webpack-cli": "^1.0.0"
   },

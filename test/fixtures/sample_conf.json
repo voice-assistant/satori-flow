@@ -1,0 +1,11 @@
+{
+  "intents": [
+    {
+      "name": "Repeat",
+      "match" : {
+        "type" : "verbatim",
+        "patterns" : [ "repeat", "again" ]
+      }
+    }
+  ]
+}

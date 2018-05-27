@@ -20,9 +20,8 @@ npm install satori-flow
 
 # Sample
 
-
-After you install the Satori, you can run a [sample](https://github.com/voice-assistant/satori-flow/blob/master/sample/satori-sample.js)
-bundled in this repository. The following is a sample code to detect intent from user by Satori.
+After you install the Satori, you can use satori as a library. a [sample](https://github.com/voice-assistant/satori-flow/blob/master/sample/satori-sample.js)
+is bundled in this repository. The following is a sample code to detect intent from user by Satori.
 
 ```javascript
 import { ConfigurationBuilder } from 'satori-flow'
@@ -46,6 +45,19 @@ $ babel-node sample/satori-sample.js
   userId: 985499,
   state: {},
   match: 'repeat' }
+```
+
+# CLI command
+
+Satori provides a cli command tool, after the installation of the package, we can run `satori` command with configuration file.
+
+```
+satori -c test/fixtures/sample_conf.json
+please repeat
+{ text: 'please repeat',
+  userId: 985499,
+  state: {},
+  match: 'Repeat' }
 ```
 
 # Usage
