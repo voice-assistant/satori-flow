@@ -1,11 +1,30 @@
 {
   "intents": [
     {
-      "name": "Repeat",
-      "match" : {
-        "type" : "verbatim",
-        "patterns" : [ "repeat", "again" ]
+      "name": "repeat",
+      "match": {
+        "type": "verbatim",
+        "patterns": [
+          "repeat",
+          "again"
+        ]
       }
     }
-  ]
+  ],
+  "runners" : {
+    "repeat": {
+      "type": "random",
+      "list": [
+        "call me please again.",
+        "excuse me?"
+      ]
+    },
+    "default": {
+      "type": "random",
+      "name": "default",
+      "list": [
+        "sorry...."
+      ]
+    }
+  }
 }
