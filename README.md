@@ -53,11 +53,9 @@ Satori provides a cli command tool, after the installation of the package, we ca
 
 ```
 satori -c test/fixtures/sample_conf.json
-please repeat
-{ text: 'please repeat',
-  userId: 985499,
-  state: {},
-  match: 'Repeat' }
+config path test/fixtures/sample_conf.json
+repeat again
+excuse me?
 ```
 
 # Usage
