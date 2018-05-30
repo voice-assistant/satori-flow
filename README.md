@@ -49,11 +49,11 @@ $ babel-node sample/satori-sample.js
 
 # CLI command
 
-Satori provides a cli command tool, after the installation of the package, we can run `satori` command with configuration file.
+Satori provides a cli command tool, after the installation of the package, we can run the `satori` command specifying a configuration file
+(a sample configuration file is available [here](https://github.com/voice-assistant/satori-flow/blob/master/test/fixtures/sample_conf.json)).
 
 ```
 satori -c test/fixtures/sample_conf.json
-config path test/fixtures/sample_conf.json
 repeat again
 excuse me?
 ```
