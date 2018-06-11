@@ -57,4 +57,16 @@ export default class Configuration {
     runners() {
         return this.config["runners"];
     }
+
+    /**
+     * Get table setting.
+     * @returns {*}
+     */
+    table() {
+        if ('table' in this.config) {
+            return this.config["table"];
+        } else {
+            return {'type': "memory"}
+        }
+    }
 }

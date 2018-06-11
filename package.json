@@ -23,7 +23,8 @@
     "eslint": "^4.12.1",
     "espower-babel": "^4.0.3",
     "mocha": "^4.0.1",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
