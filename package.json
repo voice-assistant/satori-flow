@@ -24,7 +24,8 @@
     "eslint": "^4.12.1",
     "espower-babel": "^4.0.3",
     "mocha": "^4.0.1",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -37,6 +38,7 @@
     "babel-runtime": "^6.26.0",
     "babelfy": "^1.1.0",
     "commander": "^2.15.1",
+    "redis": "^2.8.0",
     "webpack": "^3.8.1",
     "webpack-cli": "^1.0.0"
   },

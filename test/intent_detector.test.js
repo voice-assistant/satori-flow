@@ -2,6 +2,7 @@ import assert  from 'power-assert';
 
 import ConfigurationBuilder from "../src/configuration_builder";
 import IntentDetector from "../src/intent_detector";
+import RedisTable from "../src/table/redis_table"
 
 class IntentDetectorForTest extends IntentDetector {
    setUserState(userId, state) {
@@ -9,7 +10,7 @@ class IntentDetectorForTest extends IntentDetector {
     }
 }
 
-describe( 'IntentDetector.match(input)', () => {
+describe( 'IntentDetector', () => {
     describe ('#match', () => {
         it( 'returns result containing matched handler name when input match a intents', () => {
             const config = new ConfigurationBuilder()

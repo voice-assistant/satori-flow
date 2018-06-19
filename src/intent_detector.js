@@ -1,5 +1,6 @@
 import IntentHandler from "./intent_handler";
 import MemoryTable from "./table/memory_table";
+import RedisTable from "./table/redis_table";
 
 /**
  * Select a Handler which match input sentence and meets the condition.
@@ -7,10 +8,24 @@ import MemoryTable from "./table/memory_table";
 export default class IntentDetector {
     constructor(config) {
         this.slots = config.slots();
-        this.table = new MemoryTable(config); // TODO: applicable to other data storage such as mongo
+        this.table = this.createTable(config);
         this.handlers = [];
         for(const intent of config.intents()) {
             this.handlers.push(new IntentHandler(intent, this.slots));
+        }
+    }
+
+    createTable(config) {
+        const table = config.table();
+        if (table["type"] === "memory") {
+            console.log("Memory table is selected...");
+            return new MemoryTable(config);
+        } else if (table["type"] === "redis") {
+            console.log("Redis table is selected...");
+            return new RedisTable(config);
+        } else {
+            console.wan("No table is selected...");
+            throw new Error('No table type as ' + table["type"]);
         }
     }
 
