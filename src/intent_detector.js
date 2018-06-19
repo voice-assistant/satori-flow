@@ -8,7 +8,7 @@ import RedisTable from "./table/redis_table";
 export default class IntentDetector {
     constructor(config) {
         this.slots = config.slots();
-        this.createTable(config);
+        this.table = this.createTable(config);
         this.handlers = [];
         for(const intent of config.intents()) {
             this.handlers.push(new IntentHandler(intent, this.slots));
@@ -18,12 +18,14 @@ export default class IntentDetector {
     createTable(config) {
         const table = config.table();
         if (table["type"] === "memory") {
-            this.table = new MemoryTable(config);
+            console.log("Memory table is selected...");
+            return new MemoryTable(config);
         } else if (table["type"] === "redis") {
-            this.table = new RedisTable(config);
+            console.log("Redis table is selected...");
+            return new RedisTable(config);
         } else {
-            var err = new Error('No table type as ' + table["type"]);
-            throw err;
+            console.wan("No table is selected...");
+            throw new Error('No table type as ' + table["type"]);
         }
     }
 

@@ -2,7 +2,7 @@ import Configuration from "./configuration";
 
 export default class ConfigurationBuilder {
     constructor() {
-        this.config = { "intents" : [], "slots" : {}, "runners" : {} };
+        this.config = { "intents" : [], "slots" : {}, "runners" : {}, "table": {"type" : "memory"}};
     }
 
     build() {
@@ -21,6 +21,11 @@ export default class ConfigurationBuilder {
 
     addRunner(name, runner) {
         this.config.runners[name] = runner;
+        return this;
+    }
+
+    addTable(table) {
+        this.config.table = table;
         return this;
     }
 }

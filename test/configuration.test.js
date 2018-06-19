@@ -15,11 +15,13 @@ describe( 'Configuration', () => {
                         "patterns" : [ "もう一度", "もう一度教えて" ]
                       }
                     }
-                  ]
+                  ],
+                  "table": {"type": "redis"}
                 }`);
             assert(config.intent(0).name === "Repeat");
             assert(config.intent(0).match["type"] === "verbatim");
             assert(config.intent(0).match["patterns"].length === 2);
+            assert(config.table().type === "redis");
         });
     });
 
