@@ -22,9 +22,7 @@ describe( 'Configuration', () => {
             assert(config.intent(0).match["patterns"].length === 2);
         });
     });
-} );
 
-describe( 'Configuration', () => {
     describe( '#build', () => {
         it( 'can generate Configuration instance containing a intent', () => {
             const config = new ConfigurationBuilder().addIntent("Repeat" , { "type" : "verbatim", "patterns" : [ "もう一度", "もう一度教えて" ]}).build();
@@ -71,5 +69,4 @@ describe( 'Configuration', () => {
         });
 
     });
-});
-
+} );
